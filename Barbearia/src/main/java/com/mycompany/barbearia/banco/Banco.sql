@@ -1,8 +1,17 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/SQLTemplate.sql to edit this template
- */
+
 /**
  * Author:  alexandre
  * Created: Sep 30, 2023
  */
+CREATE DATABASE barbearia;
+
+CREATE TABLE clientes (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome varchar(50),
+telefone varchar(11),
+);
+
+CREATE TABLE agenda (
+id INT AUTO_INCREMENT PRIMARY KEY,
+
+);
