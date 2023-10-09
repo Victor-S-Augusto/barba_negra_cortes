@@ -80,7 +80,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarAgendaActionPerformed
-        Agenda agenda = new Agenda();
+        TelaAgenda agenda = new TelaAgenda();
         
         agenda.setVisible(true);
         this.setVisible(false);

@@ -9,12 +9,21 @@ package com.mycompany.barbearia.entidades;
  * @author alexandre
  */
 public class Cliente {
+    private int id;
     private String name;
     private String telefone;
     
     public Cliente() {
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+    
     public void setName(String name) {
         this.name = name;
     }
