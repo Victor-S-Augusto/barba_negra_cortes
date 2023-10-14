@@ -3,14 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.barbearia.entidades;
-
 import java.util.Date;
+
 public class Cliente {
 
   private int id;
   private String nome;
   private String telefone; 
-  private Date dataServico;
+  //private Date dataServico;
 
   public Cliente() {}
 
@@ -18,7 +18,7 @@ public class Cliente {
     this.id = id;
     this.nome = nome;
     this.telefone = tel;
-    this.dataServico = dataServico;
+    ///this.dataServico = dataServico;
   }
 
   public int getId() {
@@ -45,12 +45,12 @@ public class Cliente {
     this.telefone = telefone;
   }
 
-  public Date getDataServico() {
-    return dataServico;
-  }
+  //public Date getDataServico() {
+  //  return dataServico;
+  //}
 
-  public void setDataServico(Date dataServico) {
-    this.dataServico = dataServico;
-  }
+  //public void setDataServico(Date dataServico) {
+   // this.dataServico = dataServico;
+  //}
 
 }

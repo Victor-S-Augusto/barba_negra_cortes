@@ -12,8 +12,8 @@ CREATE TABLE clientes (
 
 CREATE TABLE agenda (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    data DATE,
-    hora TIME,
+    servico varchar(15),
+    dataHorario DATETIME,
     id_cliente INT,
     FOREIGN KEY (id_cliente) REFERENCES clientes(id)
 );

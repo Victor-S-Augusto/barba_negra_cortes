@@ -3,20 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.barbearia.entidades;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Agenda {
 
   private int id;
-  private Date dataHorario;
+  private LocalDateTime dataHorario;
   private String servico;
   private Cliente cliente;
 
   public Agenda() {}
 
-  public Agenda(int id, Date dataHorario, String servico, Cliente cliente) {
+  public Agenda(LocalDateTime dataHorario, String servico, Cliente cliente) {
     this.id = id;
-    this.dataHorario = dataHorario;
+    this.dataHorario = dataHorario; 
     this.servico = servico;
     this.cliente = cliente;
   }
@@ -29,13 +29,14 @@ public class Agenda {
     this.id = id;
   }
 
-  public Date getDataHorario() {
-    return dataHorario;
-  }
+    public void setDataHorario(LocalDateTime dataHorario) {
+        this.dataHorario = dataHorario;
+    }
 
-  public void setDataHorario(Date dataHorario) {
-    this.dataHorario = dataHorario;
-  }
+    public LocalDateTime getDataHorario() {
+        return dataHorario;
+    }
+    
 
   public String getServico() {
     return servico;

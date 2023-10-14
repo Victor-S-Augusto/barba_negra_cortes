@@ -13,20 +13,22 @@ import java.util.List;
 import com.mycompany.barbearia.entidades.Agenda; 
 import com.mycompany.barbearia.banco.ConexaoBanco;
 import com.mycompany.barbearia.entidades.Cliente;
+import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 public class CrudAgenda {
 
   public void salvar(Agenda agenda) {
 
-    String sql = "INSERT INTO agenda (data, servico, cliente_id) VALUES (?, ?, ?)";
+    String sql = "INSERT INTO agenda (data, servico, horario, cliente_id) VALUES (?, ?, ?)";
     
     try {
 
       Connection conn = ConexaoBanco.getConnection();
       PreparedStatement stmt = conn.prepareStatement(sql);
 
-      java.util.Date dataHorarioUtil = agenda.getDataHorario();
-      java.sql.Date dataHorarioSql = new java.sql.Date(dataHorarioUtil.getTime());
+      LocalDateTime dataHorarioUtil = agenda.getDataHorario();
+      java.sql.Date dataHorarioSql = java.sql.Date.valueOf(dataHorarioUtil.toLocalDate());
 
       stmt.setDate(1, dataHorarioSql); 
       stmt.setString(2, agenda.getServico());
@@ -56,8 +58,10 @@ public class CrudAgenda {
     while (rs.next()) {
         Agenda agenda = new Agenda();
         agenda.setId(rs.getInt("id"));
-        agenda.setDataHorario(rs.getDate("data"));
+        Timestamp timestamp = rs.getTimestamp("dataHorario");
+        agenda.setDataHorario(timestamp.toLocalDateTime());
         agenda.setServico(rs.getString("servico"));
+        
         
         Cliente cliente = new Cliente();
         cliente.setNome(rs.getString("cliente"));
