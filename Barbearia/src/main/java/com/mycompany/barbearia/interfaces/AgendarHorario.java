@@ -6,6 +6,7 @@ package com.mycompany.barbearia.interfaces;
 import com.mycompany.barbearia.entidades.Cliente;
 import java.time.LocalDateTime;
 import com.mycompany.barbearia.entidades.Agenda;
+import crud.CrudAgenda;
 
 /**
  *
@@ -53,16 +54,16 @@ public class AgendarHorario extends javax.swing.JFrame {
             }
         });
 
-        cmbDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dia", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        cmbDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        cmbMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mês", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        cmbMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         cmbMes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbMesActionPerformed(evt);
             }
         });
 
-        cmbAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ano", "2023", "2024" }));
+        cmbAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2024" }));
 
         btnRetornarMenu.setText("Retornar ao Menu");
         btnRetornarMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -189,12 +190,12 @@ public class AgendarHorario extends javax.swing.JFrame {
         Cliente cliente = new Cliente();
         
         int ano = Integer.parseInt((String) cmbAno.getSelectedItem());
-        int mes = cmbMes.getSelectedIndex() + 1; 
+        int mes = cmbMes.getSelectedIndex(); 
         int dia = Integer.parseInt((String) cmbDia.getSelectedItem());
         String servico = (String) cmbServico.getSelectedItem();
         
-        int hora = (Integer) cmbHora.getSelectedItem();
-        int minuto = (Integer) cmbMinuto.getSelectedItem();
+        int hora = Integer.parseInt((String) cmbHora.getSelectedItem());
+        int minuto = Integer.parseInt((String) cmbMinuto.getSelectedItem());
  
         LocalDateTime dataHorario = LocalDateTime.of(ano, mes, dia, hora, minuto);
         
@@ -203,7 +204,11 @@ public class AgendarHorario extends javax.swing.JFrame {
         cliente.setTelefone(txtTelefone.getText());
         
         Agenda agenda = new Agenda(dataHorario, servico, cliente);
-        
+        CrudAgenda salvar = new CrudAgenda();
+        salvar.salvar(agenda);
+        this.dispose();
+        ConfirmacaoAgendamento confirmacao = new ConfirmacaoAgendamento();
+        confirmacao.setVisible(true);
     }//GEN-LAST:event_btnAgendarActionPerformed
 
     public static void main(String args[]) {

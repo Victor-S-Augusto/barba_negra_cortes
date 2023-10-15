@@ -2,8 +2,8 @@ com/mycompany/barbearia/interfaces/ConfirmacaoAgendamento$2.class
 com/mycompany/barbearia/interfaces/AgendarHorario$4.class
 com/mycompany/barbearia/entidades/Cliente.class
 com/mycompany/barbearia/App.class
-crud/CrudAgenda.class
 com/mycompany/barbearia/interfaces/TelaAgenda$1.class
+crud/CrudAgenda.class
 com/mycompany/barbearia/interfaces/TelaAgenda.class
 com/mycompany/barbearia/interfaces/AgendarHorario$1.class
 crud/CrudCliente.class
@@ -16,10 +16,10 @@ com/mycompany/barbearia/interfaces/ConfirmacaoAgendamento$1.class
 com/mycompany/barbearia/interfaces/AgendarHorario.class
 com/mycompany/barbearia/interfaces/ConfirmacaoAgendamento$3.class
 com/mycompany/barbearia/App$1.class
-com/mycompany/barbearia/interfaces/AgendarHorario$3.class
 com/mycompany/barbearia/interfaces/ConfirmacaoAgendamento.class
+com/mycompany/barbearia/interfaces/AgendarHorario$3.class
 com/mycompany/barbearia/interfaces/MenuPrincipal$3.class
-com/mycompany/barbearia/interfaces/AgendarHorario$2.class
 com/mycompany/barbearia/interfaces/MenuPrincipal$2.class
+com/mycompany/barbearia/interfaces/AgendarHorario$2.class
 com/mycompany/barbearia/interfaces/TelaAgenda$2.class
 com/mycompany/barbearia/interfaces/MenuPrincipal.class

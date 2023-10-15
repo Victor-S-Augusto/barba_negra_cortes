@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class ConexaoBanco{
 
-  private static String url = "jdbc:mysql://localhost:3306/nome_banco";
+  private static String url = "jdbc:mysql://localhost:3306/barbearia";
   private static String user = "root";
   private static String password = "123456789";
 

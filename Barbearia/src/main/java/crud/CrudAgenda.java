@@ -20,7 +20,7 @@ public class CrudAgenda {
 
   public void salvar(Agenda agenda) {
 
-    String sql = "INSERT INTO agenda (data, servico, horario, cliente_id) VALUES (?, ?, ?)";
+    String sql = "INSERT INTO agenda (dataHorario, servico, nome) VALUES (?, ?, ?)";
     
     try {
 
@@ -29,10 +29,12 @@ public class CrudAgenda {
 
       LocalDateTime dataHorarioUtil = agenda.getDataHorario();
       java.sql.Date dataHorarioSql = java.sql.Date.valueOf(dataHorarioUtil.toLocalDate());
+      
+      Timestamp timestamp = Timestamp.valueOf(dataHorarioUtil);
 
-      stmt.setDate(1, dataHorarioSql); 
+      stmt.setTimestamp(1, timestamp); 
       stmt.setString(2, agenda.getServico());
-      stmt.setLong(3, agenda.getCliente().getId());
+      stmt.setString(3, agenda.getCliente().getNome());
 
       stmt.executeUpdate();
 
