@@ -4,6 +4,10 @@
  */
 package com.mycompany.barbearia.interfaces;
 
+import com.mycompany.barbearia.entidades.Agenda;
+import crud.CrudAgenda;
+import java.util.List;
+
 /**
  * @author alexandre
  */
@@ -60,7 +64,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(btnMostrarAgenda)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(151, 151, 151)
+                .addGap(163, 163, 163)
                 .addComponent(btnSair)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -80,17 +84,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarAgendaActionPerformed
-        TelaAgenda agenda = new TelaAgenda();
-        
-        agenda.setVisible(true);
-        this.setVisible(false);
+        CrudAgenda crudAgenda = new CrudAgenda();
+        List<Agenda> agendas = crudAgenda.listar();
+
+        TelaAgenda telaAgenda = new TelaAgenda(agendas);
+        telaAgenda.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnMostrarAgendaActionPerformed
 
     private void btnAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgendarActionPerformed
         AgendarHorario agendar = new AgendarHorario();
         
         agendar.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_btnAgendarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

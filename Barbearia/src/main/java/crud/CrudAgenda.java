@@ -20,7 +20,7 @@ public class CrudAgenda {
 
   public void salvar(Agenda agenda) {
 
-    String sql = "INSERT INTO agenda (dataHorario, servico, nome) VALUES (?, ?, ?)";
+    String sql = "INSERT INTO agenda (dataHorario, nome, telefone, servico) VALUES (?, ?, ?, ?)";
     
     try {
 
@@ -32,9 +32,11 @@ public class CrudAgenda {
       
       Timestamp timestamp = Timestamp.valueOf(dataHorarioUtil);
 
-      stmt.setTimestamp(1, timestamp); 
-      stmt.setString(2, agenda.getServico());
-      stmt.setString(3, agenda.getCliente().getNome());
+      stmt.setTimestamp(1, timestamp);
+      stmt.setString(2, agenda.getCliente().getNome());
+      stmt.setString(3, agenda.getCliente().getTelefone());
+      stmt.setString(4, agenda.getServico());
+
 
       stmt.executeUpdate();
 
@@ -49,7 +51,7 @@ public class CrudAgenda {
 
   public List<Agenda> listar() {
     
-    String sql = "SELECT a.*, c.nome AS cliente FROM agenda a JOIN clientes c ON a.cliente_id = c.id";
+    String sql = "SELECT id, servico, dataHorario, nome, telefone FROM agenda";
     List<Agenda> agendas = new ArrayList<>();
 
     try {
@@ -66,7 +68,8 @@ public class CrudAgenda {
         
         
         Cliente cliente = new Cliente();
-        cliente.setNome(rs.getString("cliente"));
+        cliente.setNome(rs.getString("nome"));
+        cliente.setTelefone(rs.getString("telefone"));
         agenda.setCliente(cliente);
         
         agendas.add(agenda);

@@ -5,6 +5,7 @@
 package com.mycompany.barbearia.entidades;
 import java.time.LocalDateTime;
 
+
 public class Agenda {
 
   private int id;

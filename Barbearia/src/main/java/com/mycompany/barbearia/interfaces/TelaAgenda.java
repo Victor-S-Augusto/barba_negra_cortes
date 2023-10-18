@@ -4,14 +4,39 @@
  */
 package com.mycompany.barbearia.interfaces;
 
+import com.mycompany.barbearia.banco.ConexaoBanco;
+import com.mycompany.barbearia.entidades.Agenda;
+import crud.CrudAgenda;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author alexandre
  */
 public class TelaAgenda extends javax.swing.JFrame {
+    
+       public TelaAgenda(List<Agenda> agendas) {
+        initComponents();
+
+        DefaultTableModel model = (DefaultTableModel) tblAgenda.getModel();
+        
+
+
+        for (Agenda agenda : agendas) {
+                    
+            LocalDate data = agenda.getDataHorario().toLocalDate();
+            LocalTime horario = agenda.getDataHorario().toLocalTime();
+                        
+            model.addRow(new Object[] { agenda.getId(), agenda.getCliente().getNome(), agenda.getCliente().getTelefone(), data, horario, agenda.getServico()});
+        }
+       }
 
     public TelaAgenda() {
-        initComponents();
+        //initComponents();
     }
 
     @SuppressWarnings("unchecked")
@@ -21,26 +46,24 @@ public class TelaAgenda extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAgenda = new javax.swing.JTable();
         btnVoltarMenu = new javax.swing.JButton();
+        txtTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         tblAgenda.setBackground(new java.awt.Color(204, 204, 204));
         tblAgenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "ID", "Nome", "Telefone", "Data", "Horário"
+                "ID", "Nome", "Telefone", "Data", "Horário", "Serviço"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -52,6 +75,20 @@ public class TelaAgenda extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tblAgenda);
+        if (tblAgenda.getColumnModel().getColumnCount() > 0) {
+            tblAgenda.getColumnModel().getColumn(0).setMinWidth(30);
+            tblAgenda.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tblAgenda.getColumnModel().getColumn(0).setMaxWidth(40);
+            tblAgenda.getColumnModel().getColumn(1).setMinWidth(150);
+            tblAgenda.getColumnModel().getColumn(1).setPreferredWidth(200);
+            tblAgenda.getColumnModel().getColumn(1).setMaxWidth(200);
+            tblAgenda.getColumnModel().getColumn(2).setMinWidth(180);
+            tblAgenda.getColumnModel().getColumn(2).setPreferredWidth(200);
+            tblAgenda.getColumnModel().getColumn(2).setMaxWidth(210);
+            tblAgenda.getColumnModel().getColumn(3).setMinWidth(140);
+            tblAgenda.getColumnModel().getColumn(3).setPreferredWidth(140);
+            tblAgenda.getColumnModel().getColumn(3).setMaxWidth(180);
+        }
 
         btnVoltarMenu.setText("Retornar ao menu");
         btnVoltarMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -60,20 +97,27 @@ public class TelaAgenda extends javax.swing.JFrame {
             }
         });
 
+        txtTitulo.setText("Visualização dos horários");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVoltarMenu)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(304, 304, 304)
+                .addComponent(txtTitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addComponent(txtTitulo)
+                .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVoltarMenu)
@@ -90,45 +134,10 @@ public class TelaAgenda extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVoltarMenuActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaAgenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaAgenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaAgenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaAgenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaAgenda().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVoltarMenu;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblAgenda;
+    private javax.swing.JLabel txtTitulo;
     // End of variables declaration//GEN-END:variables
 }

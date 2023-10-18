@@ -5,7 +5,6 @@
 package com.mycompany.barbearia;
 import com.mycompany.barbearia.entidades.Cliente;
 import com.mycompany.barbearia.interfaces.MenuPrincipal;
-import crud.CrudCliente;
 
 /**
  *
