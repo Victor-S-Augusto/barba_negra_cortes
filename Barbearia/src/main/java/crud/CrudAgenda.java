@@ -65,8 +65,7 @@ public class CrudAgenda {
         Timestamp timestamp = rs.getTimestamp("dataHorario");
         agenda.setDataHorario(timestamp.toLocalDateTime());
         agenda.setServico(rs.getString("servico"));
-        
-        
+            
         Cliente cliente = new Cliente();
         cliente.setNome(rs.getString("nome"));
         cliente.setTelefone(rs.getString("telefone"));

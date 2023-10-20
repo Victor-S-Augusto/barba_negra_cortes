@@ -4,6 +4,9 @@
  */
 package com.mycompany.barbearia.interfaces;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author alexandre
@@ -15,6 +18,17 @@ public class ConfirmacaoAgendamento extends javax.swing.JFrame {
      */
     public ConfirmacaoAgendamento() {
         initComponents();
+        
+                int largura = getWidth();
+        int altura = getHeight();
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension dimensoesTela = toolkit.getScreenSize();
+
+        // Calcula a posição para centralizar a janela
+        int x = (dimensoesTela.width - largura) / 2;
+        int y = (dimensoesTela.height - altura) / 2;
+        
+        setLocation(x, y);
     }
 
     /**
@@ -27,15 +41,12 @@ public class ConfirmacaoAgendamento extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         btnRetornarMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Seu horário foi agendado com sucesso!");
-
-        jLabel2.setText("Estaremos te aguardando na data agendada.");
+        jLabel1.setText("O horário foi agendado com sucesso!");
 
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
@@ -55,29 +66,23 @@ public class ConfirmacaoAgendamento extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(60, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(10, 10, 10)))
-                .addGap(57, 57, 57))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(btnRetornarMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(btnSair)
                 .addGap(18, 18, 18))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(75, 75, 75))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair)
                     .addComponent(btnRetornarMenu))
@@ -101,6 +106,5 @@ public class ConfirmacaoAgendamento extends javax.swing.JFrame {
     private javax.swing.JButton btnRetornarMenu;
     private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
