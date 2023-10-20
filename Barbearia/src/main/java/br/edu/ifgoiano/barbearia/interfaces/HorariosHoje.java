@@ -2,15 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.barbearia.interfaces;
+package br.edu.ifgoiano.barbearia.interfaces;
 
-import com.mycompany.barbearia.entidades.Agenda;
+import br.edu.ifgoiano.barbearia.modelo.dao.AgendamentoDAO;
+import br.edu.ifgoiano.barbearia.modelo.dto.Agendamento;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,33 +24,40 @@ import javax.swing.table.DefaultTableModel;
  */
 public class HorariosHoje extends javax.swing.JFrame {
 
-    public HorariosHoje(List<Agenda> agendas) {
-        initComponents();
-        
-        int largura = getWidth();
-        int altura = getHeight();
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension dimensoesTela = toolkit.getScreenSize();
-
-        // Calcula a posição para centralizar a janela
-        int x = (dimensoesTela.width - largura) / 2;
-        int y = (dimensoesTela.height - altura) / 2;
-        
-        setLocation(x, y);
-        
-        DefaultTableModel model = (DefaultTableModel) tblAgenda.getModel();
-        
-        agendas.sort(Comparator.comparing(Agenda::getDataHorario));
-        LocalDate dataAtual = LocalDate.now();
-
-        for (Agenda agenda : agendas) {
-                    
-            LocalDate data = agenda.getDataHorario().toLocalDate();
-            LocalTime horario = agenda.getDataHorario().toLocalTime();
+    public HorariosHoje() {
+        try {
+            initComponents();
             
-            if(data.isEqual(dataAtual)){
-                model.addRow(new Object[] { agenda.getId(), agenda.getCliente().getNome(), agenda.getCliente().getTelefone(), data, horario, agenda.getServico()});
-            }                    
+            AgendamentoDAO crud = new AgendamentoDAO();
+            List<Agendamento> agendas = crud.listar(new Date());
+                                
+            int largura = getWidth();
+            int altura = getHeight();
+            Toolkit toolkit = Toolkit.getDefaultToolkit();
+            Dimension dimensoesTela = toolkit.getScreenSize();
+            
+            // Calcula a posição para centralizar a janela
+            int x = (dimensoesTela.width - largura) / 2;
+            int y = (dimensoesTela.height - altura) / 2;
+            
+            setLocation(x, y);
+            
+            DefaultTableModel model = (DefaultTableModel) tblAgenda.getModel();
+            
+            agendas.sort(Comparator.comparing(Agendamento::getDataHorario));            
+            
+            for (Agendamento agenda : agendas) {
+                
+                LocalDate data = agenda.getDataHorario().toLocalDate();
+                LocalTime horario = agenda.getDataHorario().toLocalTime();
+                
+                //if(data.isEqual(dataAtual)){
+                    model.addRow(new Object[] { agenda.getId(), agenda.getCliente().getNome(), agenda.getCliente().getTelefone(), data, horario, agenda.getServico()});
+                //}
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(HorariosHoje.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Ocorreu um erro: " + ex.getMessage());
         }
     }
     @SuppressWarnings("unchecked")
@@ -58,7 +70,7 @@ public class HorariosHoje extends javax.swing.JFrame {
         btnRetornarMenu = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblTitulo.setText("Agendamentos de Hoje");
 

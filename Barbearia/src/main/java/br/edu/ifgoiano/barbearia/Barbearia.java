@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.barbearia;
-import com.mycompany.barbearia.entidades.Cliente;
-import com.mycompany.barbearia.interfaces.MenuPrincipal;
+package br.edu.ifgoiano.barbearia;
+import br.edu.ifgoiano.barbearia.modelo.dto.Cliente;
+import br.edu.ifgoiano.barbearia.interfaces.MenuPrincipal;
 
 /**
  *
  * @author alexandre
  */
-public class App {
+public class Barbearia {
 
   public static void main(String[] args) {
     

@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.barbearia.interfaces;
+package br.edu.ifgoiano.barbearia.interfaces;
 
-import com.mycompany.barbearia.banco.ConexaoBanco;
-import com.mycompany.barbearia.entidades.Agenda;
-import crud.CrudAgenda;
+import br.edu.ifgoiano.barbearia.modelo.dao.DAO;
+import br.edu.ifgoiano.barbearia.modelo.dto.Agendamento;
+import br.edu.ifgoiano.barbearia.modelo.dao.AgendamentoDAO;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.List;
@@ -14,6 +14,9 @@ import javax.swing.table.DefaultTableModel;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Comparator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
@@ -21,40 +24,44 @@ import javax.swing.SwingUtilities;
  * @author alexandre
  */
 public class TelaAgenda extends javax.swing.JFrame {
-    
-       public TelaAgenda(List<Agenda> agendas) {
-        initComponents();
-        
-        int largura = getWidth();
-        int altura = getHeight();
-        
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension dimensoesTela = toolkit.getScreenSize();
-
-        // Calcula a posição para centralizar a janela
-        int x = (dimensoesTela.width - largura) / 2;
-        int y = (dimensoesTela.height - altura) / 2;
-        
-        setLocation(x, y);
-
-        DefaultTableModel model = (DefaultTableModel) tblAgenda.getModel();
-        
-        agendas.sort(Comparator.comparing(Agenda::getDataHorario));
-        LocalDate dataAtual = LocalDate.now();
-
-        for (Agenda agenda : agendas) {
-                    
-            LocalDate data = agenda.getDataHorario().toLocalDate();
-            LocalTime horario = agenda.getDataHorario().toLocalTime();
-            
-            if(data.isEqual(dataAtual) || data.isAfter(dataAtual)){
-                model.addRow(new Object[] { agenda.getId(), agenda.getCliente().getNome(), agenda.getCliente().getTelefone(), data, horario, agenda.getServico()});
-            }                    
-        }
-       }
 
     public TelaAgenda() {
-        //initComponents();
+        try {
+            initComponents();
+            
+            AgendamentoDAO crudAgenda = new AgendamentoDAO();
+            List<Agendamento> agendas = crudAgenda.listar();
+            
+            int largura = getWidth();
+            int altura = getHeight();
+            
+            Toolkit toolkit = Toolkit.getDefaultToolkit();
+            Dimension dimensoesTela = toolkit.getScreenSize();
+            
+            // Calcula a posição para centralizar a janela
+            int x = (dimensoesTela.width - largura) / 2;
+            int y = (dimensoesTela.height - altura) / 2;
+            
+            setLocation(x, y);
+            
+            DefaultTableModel model = (DefaultTableModel) tblAgenda.getModel();
+            
+            agendas.sort(Comparator.comparing(Agendamento::getDataHorario));
+            LocalDate dataAtual = LocalDate.now();
+            
+            for (Agendamento agenda : agendas) {
+                
+                LocalDate data = agenda.getDataHorario().toLocalDate();
+                LocalTime horario = agenda.getDataHorario().toLocalTime();
+                
+                if (data.isEqual(dataAtual) || data.isAfter(dataAtual)) {
+                    model.addRow(new Object[]{agenda.getId(), agenda.getCliente().getNome(), agenda.getCliente().getTelefone(), data, horario, agenda.getServico()});
+                }
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(TelaAgenda.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Ocorreu um erro: " + ex.getMessage());
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -147,7 +154,7 @@ public class TelaAgenda extends javax.swing.JFrame {
 
     private void btnVoltarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarMenuActionPerformed
         MenuPrincipal menu = new MenuPrincipal();
-        
+
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVoltarMenuActionPerformed

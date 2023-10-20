@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.barbearia.interfaces;
+package br.edu.ifgoiano.barbearia.interfaces;
 
-import com.mycompany.barbearia.entidades.Agenda;
-import crud.CrudAgenda;
+import br.edu.ifgoiano.barbearia.modelo.dto.Agendamento;
+import br.edu.ifgoiano.barbearia.modelo.dao.AgendamentoDAO;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.List;
@@ -81,21 +81,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(140, 140, 140))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnSair)
-                        .addContainerGap())))
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMostrarAgenda)
-                    .addComponent(btnMostrarAgendaHoje, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgendar, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 141, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(140, 140, 140))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnSair)
+                                .addContainerGap())))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAgendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMostrarAgenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMostrarAgendaHoje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,10 +120,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarAgendaActionPerformed
-        CrudAgenda crudAgenda = new CrudAgenda();
-        List<Agenda> agendas = crudAgenda.listar();
-
-        TelaAgenda telaAgenda = new TelaAgenda(agendas);
+        TelaAgenda telaAgenda = new TelaAgenda();
         telaAgenda.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMostrarAgendaActionPerformed
@@ -137,10 +137,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnMostrarAgendaHojeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarAgendaHojeActionPerformed
-        CrudAgenda crud = new CrudAgenda();
-        List<Agenda> agendas = crud.listar();
-        
-        HorariosHoje agenda = new HorariosHoje(agendas);
+        HorariosHoje agenda = new HorariosHoje();
         agenda.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMostrarAgendaHojeActionPerformed
