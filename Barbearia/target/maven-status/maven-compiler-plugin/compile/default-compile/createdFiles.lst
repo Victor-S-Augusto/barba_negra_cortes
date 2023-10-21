@@ -26,6 +26,7 @@ br/edu/ifgoiano/barbearia/interfaces/CadastroCliente.class
 br/edu/ifgoiano/barbearia/interfaces/CadastroCliente$1.class
 br/edu/ifgoiano/barbearia/interfaces/MenuPrincipal$1.class
 br/edu/ifgoiano/barbearia/interfaces/ConfirmacaoAgendamento$1.class
+br/edu/ifgoiano/barbearia/interfaces/MenuPrincipal$6.class
 br/edu/ifgoiano/barbearia/interfaces/AgendarHorario.class
 br/edu/ifgoiano/barbearia/modelo/dao/DAO.class
 br/edu/ifgoiano/barbearia/interfaces/MenuPrincipal.class
