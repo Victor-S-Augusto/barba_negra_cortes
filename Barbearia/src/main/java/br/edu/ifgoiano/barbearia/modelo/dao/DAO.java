@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DAO {
-    private static String url = "jdbc:mysql://192.168.24.139:3306/barbearia";
+    private static String url = "jdbc:mysql://localhost:3306/barbearia";
     private static String user = "root";
     private static String password = "123456789";
 

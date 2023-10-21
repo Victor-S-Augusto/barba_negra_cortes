@@ -40,13 +40,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnSair = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnMostrarAgendaHoje = new javax.swing.JButton();
+        btnCadastroCliente = new javax.swing.JButton();
 
         jMenuItem1.setBackground(new java.awt.Color(255, 51, 51));
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        btnMostrarAgenda.setBackground(new java.awt.Color(204, 255, 255));
+        btnMostrarAgenda.setBackground(new java.awt.Color(153, 153, 153));
+        btnMostrarAgenda.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        btnMostrarAgenda.setForeground(new java.awt.Color(255, 255, 255));
         btnMostrarAgenda.setText("Visualizar Agenda");
         btnMostrarAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +58,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnAgendar.setBackground(new java.awt.Color(153, 153, 153));
+        btnAgendar.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        btnAgendar.setForeground(new java.awt.Color(255, 255, 255));
         btnAgendar.setText("Agendar horário");
         btnAgendar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,6 +68,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnSair.setBackground(new java.awt.Color(153, 153, 153));
+        btnSair.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        btnSair.setForeground(new java.awt.Color(255, 255, 255));
         btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,8 +78,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Escolha uma opção");
+        jLabel1.setFont(new java.awt.Font("Pirata One", 1, 48)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/alexandre/Documents/aaaaaaaaaaaaa.png")); // NOI18N
+        jLabel1.setText("Barba Negra");
 
+        btnMostrarAgendaHoje.setBackground(new java.awt.Color(153, 153, 153));
+        btnMostrarAgendaHoje.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        btnMostrarAgendaHoje.setForeground(new java.awt.Color(255, 255, 255));
         btnMostrarAgendaHoje.setText("Horários de hoje");
         btnMostrarAgendaHoje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,41 +92,49 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnCadastroCliente.setBackground(new java.awt.Color(153, 153, 153));
+        btnCadastroCliente.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        btnCadastroCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnCadastroCliente.setText("Cadastrar Cliente");
+        btnCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 141, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(140, 140, 140))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnSair)
-                                .addContainerGap())))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnMostrarAgenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnMostrarAgendaHoje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                    .addComponent(btnMostrarAgendaHoje, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMostrarAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAgendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadastroCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(btnMostrarAgenda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnMostrarAgendaHoje)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAgendar)
-                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMostrarAgenda)
+                    .addComponent(btnAgendar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMostrarAgendaHoje)
+                    .addComponent(btnCadastroCliente))
+                .addGap(37, 37, 37)
                 .addComponent(btnSair)
                 .addContainerGap())
         );
@@ -141,6 +164,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         agenda.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnMostrarAgendaHojeActionPerformed
+
+    private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
+        new CadastroCliente().setVisible(true);
+    }//GEN-LAST:event_btnCadastroClienteActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -176,6 +203,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgendar;
+    private javax.swing.JButton btnCadastroCliente;
     private javax.swing.JButton btnMostrarAgenda;
     private javax.swing.JButton btnMostrarAgendaHoje;
     private javax.swing.JButton btnSair;

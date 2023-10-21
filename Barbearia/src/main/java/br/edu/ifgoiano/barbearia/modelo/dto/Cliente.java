@@ -11,8 +11,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(int id, String nome, String tel) {
-        this.id = id;
+    public Cliente(String nome, String tel) {
         this.nome = nome;
         this.telefone = tel;
     }
