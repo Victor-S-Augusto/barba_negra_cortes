@@ -6,6 +6,8 @@ package br.edu.ifgoiano.barbearia.interfaces;
 
 import br.edu.ifgoiano.barbearia.modelo.dao.ClienteDAO;
 import br.edu.ifgoiano.barbearia.modelo.dto.Cliente;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -21,6 +23,16 @@ public class CadastroCliente extends javax.swing.JFrame {
      */
     public CadastroCliente() {
         initComponents();
+        
+        int largura = getWidth();
+        int altura = getHeight();
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension dimensoesTela = toolkit.getScreenSize();
+
+        int x = (dimensoesTela.width - largura) / 2;
+        int y = (dimensoesTela.height - altura) / 2;
+        
+        setLocation(x, y);       
     }
 
     /**
@@ -36,11 +48,14 @@ public class CadastroCliente extends javax.swing.JFrame {
         lblTelefone = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         txtTelefone = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
         btnRetornarMenu = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(403, 314));
+        setMinimumSize(new java.awt.Dimension(403, 314));
+        setResizable(false);
 
         lblNome.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         lblNome.setText("Nome:");
@@ -53,10 +68,6 @@ public class CadastroCliente extends javax.swing.JFrame {
                 txtNomeActionPerformed(evt);
             }
         });
-
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Insira as Informações do Cliente");
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -72,13 +83,15 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon("/home/alexandre/Documents/icone.png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnRetornarMenu)
                     .addComponent(btnSalvar)
@@ -90,26 +103,27 @@ public class CadastroCliente extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNome)
                             .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(76, 76, 76)
+                .addGap(14, 14, 14)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTelefone)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addComponent(btnSalvar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(btnRetornarMenu)
-                .addGap(15, 15, 15))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -128,6 +142,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             cli.salvar(c);
             JOptionPane.showMessageDialog(this, "Horário agendado com sucesso!");
             this.dispose();
+            new MenuPrincipal().setVisible(true);
         } catch (Exception ex) {
             Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Ocorreu um erro." + ex.getMessage());
@@ -177,7 +192,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRetornarMenu;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTelefone;
     private javax.swing.JTextField txtNome;

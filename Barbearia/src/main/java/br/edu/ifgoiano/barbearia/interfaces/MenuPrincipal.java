@@ -23,7 +23,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimensoesTela = toolkit.getScreenSize();
 
-        // Calcula a posição para centralizar a janela
         int x = (dimensoesTela.width - largura) / 2;
         int y = (dimensoesTela.height - altura) / 2;
         
@@ -41,17 +40,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnMostrarAgendaHoje = new javax.swing.JButton();
         btnCadastroCliente = new javax.swing.JButton();
         lblNomeMarca = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
+        lblFundo = new javax.swing.JLabel();
 
         jMenuItem1.setBackground(new java.awt.Color(255, 51, 51));
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(420, 370));
         setMinimumSize(new java.awt.Dimension(420, 370));
-        setPreferredSize(new java.awt.Dimension(420, 370));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -126,14 +123,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(lblNomeMarca);
         lblNomeMarca.setBounds(0, 70, 420, 100);
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon("/home/alexandre/Documents/aaaaaaaaaaaaa.png")); // NOI18N
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, -10, 420, 120);
+        lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Documents/aaaaaaaaaaaaa.png")); // NOI18N
+        getContentPane().add(lblLogo);
+        lblLogo.setBounds(0, -10, 420, 120);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/alexandre/Downloads/plano-de-fundo-texturizado-de-parede-de-concreto-solido.jpg")); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 420, 390);
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Downloads/fundo-de-textura-de-estilo-grunge-escuro-detalhado/detailed_grunge_texture_background_2307.jpg")); // NOI18N
+        getContentPane().add(lblFundo);
+        lblFundo.setBounds(0, 0, 420, 390);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,6 +160,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroClienteActionPerformed
         new CadastroCliente().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnCadastroClienteActionPerformed
 
     private void btnCadastroClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroClienteMouseClicked
@@ -207,9 +205,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnMostrarAgenda;
     private javax.swing.JButton btnMostrarAgendaHoje;
     private javax.swing.JButton btnSair;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel lblFundo;
+    private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblNomeMarca;
     // End of variables declaration//GEN-END:variables
 }

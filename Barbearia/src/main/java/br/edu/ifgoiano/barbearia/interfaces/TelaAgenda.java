@@ -75,7 +75,8 @@ public class TelaAgenda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tblAgenda.setBackground(new java.awt.Color(204, 255, 255));
+        tblAgenda.setBackground(new java.awt.Color(0, 0, 0));
+        tblAgenda.setForeground(new java.awt.Color(255, 255, 255));
         tblAgenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
