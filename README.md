@@ -46,5 +46,3 @@ Contribuições são sempre bem-vindas! Para contribuir:
 3. Faça suas alterações e commit (`git commit -am 'Adiciona nova funcionalidade'`).
 4. Push para a branch (`git push origin feature/nova-funcionalidade`).
 5. Abra um Pull Request.
-
-## Licença
