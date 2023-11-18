@@ -1,7 +1,3 @@
-CREATE DATABASE barbearia;
-
-use barbearia;
-
 create table clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome varchar(50),
