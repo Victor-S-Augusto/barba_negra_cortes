@@ -28,7 +28,7 @@ O sistema é baseado em uma arquitetura modular, com componentes responsáveis p
 
 1. Clone o repositório:
 
-   git clone https://github.com/seu-usuario/sistema-agendamentos-barba-negra.git
+   git clone [https://github.com/seu-usuario/sistema-agendamentos-barba-negra.git](https://github.com/Victor-S-Augusto/barba_negra_cortes)
 
 2. Navegue até a pasta do projeto e instale as dependências:
    cd sistema-agendamentos-barba-negra
