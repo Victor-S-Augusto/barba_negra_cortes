@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.edu.ifgoiano.barbearia.interfaces;
+package br.edu.ifgoiano.barbearia.telas;
 
 import br.edu.ifgoiano.barbearia.modelo.dao.DAO;
 import br.edu.ifgoiano.barbearia.modelo.dto.Agendamento;
@@ -72,10 +72,14 @@ public class TelaAgenda extends javax.swing.JFrame {
         tblAgenda = new javax.swing.JTable();
         btnVoltarMenu = new javax.swing.JButton();
         txtTitulo = new javax.swing.JLabel();
+        lblFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(757, 353));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        tblAgenda.setBackground(new java.awt.Color(0, 0, 0));
+        tblAgenda.setBackground(new java.awt.Color(102, 102, 102));
         tblAgenda.setForeground(new java.awt.Color(255, 255, 255));
         tblAgenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,39 +120,26 @@ public class TelaAgenda extends javax.swing.JFrame {
             tblAgenda.getColumnModel().getColumn(3).setMaxWidth(180);
         }
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(0, 29, 760, 288);
+
         btnVoltarMenu.setText("Retornar ao menu");
         btnVoltarMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVoltarMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(btnVoltarMenu);
+        btnVoltarMenu.setBounds(561, 323, 190, 24);
 
         txtTitulo.setText("Visualização dos horários");
+        getContentPane().add(txtTitulo);
+        txtTitulo.setBounds(304, 0, 149, 18);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVoltarMenu)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(304, 304, 304)
-                .addComponent(txtTitulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(txtTitulo)
-                .addGap(11, 11, 11)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVoltarMenu)
-                .addContainerGap())
-        );
+        lblFundo.setBackground(new java.awt.Color(102, 102, 102));
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
+        getContentPane().add(lblFundo);
+        lblFundo.setBounds(0, 0, 770, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,6 +154,7 @@ public class TelaAgenda extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVoltarMenu;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblFundo;
     private javax.swing.JTable tblAgenda;
     private javax.swing.JLabel txtTitulo;
     // End of variables declaration//GEN-END:variables

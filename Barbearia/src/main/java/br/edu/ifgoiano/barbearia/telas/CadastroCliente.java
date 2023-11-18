@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.edu.ifgoiano.barbearia.interfaces;
+package br.edu.ifgoiano.barbearia.telas;
 
 import br.edu.ifgoiano.barbearia.modelo.dao.ClienteDAO;
 import br.edu.ifgoiano.barbearia.modelo.dto.Cliente;
@@ -50,24 +50,37 @@ public class CadastroCliente extends javax.swing.JFrame {
         txtTelefone = new javax.swing.JTextField();
         btnSalvar = new javax.swing.JButton();
         btnRetornarMenu = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        lblIcone = new javax.swing.JLabel();
+        lblFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(403, 314));
-        setMinimumSize(new java.awt.Dimension(403, 314));
+        setMaximumSize(new java.awt.Dimension(400, 344));
+        setMinimumSize(new java.awt.Dimension(400, 344));
+        setPreferredSize(new java.awt.Dimension(400, 344));
         setResizable(false);
+        getContentPane().setLayout(null);
 
         lblNome.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        lblNome.setForeground(new java.awt.Color(255, 255, 255));
         lblNome.setText("Nome:");
+        getContentPane().add(lblNome);
+        lblNome.setBounds(43, 177, 45, 18);
 
         lblTelefone.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefone.setText("Telefone");
+        getContentPane().add(lblTelefone);
+        lblTelefone.setBounds(43, 235, 64, 18);
 
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
             }
         });
+        getContentPane().add(txtNome);
+        txtNome.setBounds(119, 174, 242, 24);
+        getContentPane().add(txtTelefone);
+        txtTelefone.setBounds(119, 232, 242, 24);
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +88,8 @@ public class CadastroCliente extends javax.swing.JFrame {
                 btnSalvarActionPerformed(evt);
             }
         });
+        getContentPane().add(btnSalvar);
+        btnSalvar.setBounds(289, 290, 72, 24);
 
         btnRetornarMenu.setText("Retornar ao Menu");
         btnRetornarMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -82,49 +97,17 @@ public class CadastroCliente extends javax.swing.JFrame {
                 btnRetornarMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRetornarMenu);
+        btnRetornarMenu.setBounds(40, 290, 170, 24);
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon("/home/alexandre/Documents/icone.png")); // NOI18N
+        lblIcone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcone.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/IconeCliente.png")); // NOI18N
+        getContentPane().add(lblIcone);
+        lblIcone.setBounds(0, 40, 400, 70);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnRetornarMenu)
-                    .addComponent(btnSalvar)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNome)
-                            .addComponent(lblTelefone))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNome)
-                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(42, Short.MAX_VALUE))
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNome)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTelefone)
-                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(btnSalvar)
-                .addGap(33, 33, 33)
-                .addComponent(btnRetornarMenu)
-                .addGap(14, 14, 14))
-        );
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
+        getContentPane().add(lblFundo);
+        lblFundo.setBounds(-10, 0, 410, 390);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -192,7 +175,8 @@ public class CadastroCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRetornarMenu;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblFundo;
+    private javax.swing.JLabel lblIcone;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblTelefone;
     private javax.swing.JTextField txtNome;

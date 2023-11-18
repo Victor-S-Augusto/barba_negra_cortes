@@ -4,7 +4,7 @@
 
 package br.edu.ifgoiano.barbearia;
 import br.edu.ifgoiano.barbearia.modelo.dto.Cliente;
-import br.edu.ifgoiano.barbearia.interfaces.MenuPrincipal;
+import br.edu.ifgoiano.barbearia.telas.MenuPrincipal;
 
 /**
  *

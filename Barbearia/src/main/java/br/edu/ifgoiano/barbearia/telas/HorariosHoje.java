@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.edu.ifgoiano.barbearia.interfaces;
+package br.edu.ifgoiano.barbearia.telas;
 
 import br.edu.ifgoiano.barbearia.modelo.dao.AgendamentoDAO;
 import br.edu.ifgoiano.barbearia.modelo.dto.Agendamento;
@@ -68,12 +68,24 @@ public class HorariosHoje extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAgenda = new javax.swing.JTable();
         btnRetornarMenu = new javax.swing.JButton();
-        btnSair = new javax.swing.JButton();
+        lblFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(757, 362));
+        setMinimumSize(new java.awt.Dimension(757, 362));
+        setPreferredSize(new java.awt.Dimension(757, 362));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
+        lblTitulo.setFont(new java.awt.Font("Nimbus Sans", 1, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Agendamentos de Hoje");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(0, 10, 750, 30);
 
+        tblAgenda.setBackground(new java.awt.Color(102, 102, 102));
+        tblAgenda.setForeground(new java.awt.Color(255, 255, 255));
         tblAgenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -116,55 +128,24 @@ public class HorariosHoje extends javax.swing.JFrame {
             tblAgenda.getColumnModel().getColumn(4).setMaxWidth(120);
         }
 
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(-6, 50, 770, 269);
+
         btnRetornarMenu.setText("Retornar ao Menu");
         btnRetornarMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRetornarMenuActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRetornarMenu);
+        btnRetornarMenu.setBounds(520, 330, 230, 24);
 
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRetornarMenu)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSair)
-                .addContainerGap())
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitulo)
-                .addGap(294, 294, 294))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRetornarMenu)
-                    .addComponent(btnSair))
-                .addContainerGap())
-        );
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
+        getContentPane().add(lblFundo);
+        lblFundo.setBounds(0, 0, 760, 380);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnRetornarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetornarMenuActionPerformed
         MenuPrincipal menu = new MenuPrincipal();
@@ -175,8 +156,8 @@ public class HorariosHoje extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRetornarMenu;
-    private javax.swing.JButton btnSair;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblFundo;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tblAgenda;
     // End of variables declaration//GEN-END:variables

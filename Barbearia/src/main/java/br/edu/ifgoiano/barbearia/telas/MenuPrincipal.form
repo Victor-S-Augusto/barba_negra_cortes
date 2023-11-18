@@ -59,7 +59,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="190" width="420" height="34"/>
+          <AbsoluteConstraints x="0" y="210" width="420" height="34"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -80,7 +80,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="230" width="420" height="34"/>
+          <AbsoluteConstraints x="0" y="250" width="420" height="34"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -131,7 +131,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="270" width="420" height="34"/>
+          <AbsoluteConstraints x="0" y="290" width="420" height="34"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -154,7 +154,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="150" width="420" height="34"/>
+          <AbsoluteConstraints x="0" y="170" width="420" height="34"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -179,7 +179,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/alexandre/Documents/aaaaaaaaaaaaa.png"/>
+          <Image iconType="2" name="/home/alexandre/&#xc1;rea de trabalho/barba_negra_cortes/imagens/LogoMenuPrincipal.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -191,7 +191,7 @@
     <Component class="javax.swing.JLabel" name="lblFundo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/alexandre/Downloads/fundo-de-textura-de-estilo-grunge-escuro-detalhado/detailed_grunge_texture_background_2307.jpg"/>
+          <Image iconType="2" name="/home/alexandre/&#xc1;rea de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg"/>
         </Property>
       </Properties>
       <Constraints>

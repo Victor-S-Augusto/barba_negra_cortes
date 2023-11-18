@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package br.edu.ifgoiano.barbearia.interfaces;
+package br.edu.ifgoiano.barbearia.telas;
 
 import br.edu.ifgoiano.barbearia.modelo.dto.Agendamento;
 import br.edu.ifgoiano.barbearia.modelo.dao.AgendamentoDAO;
@@ -61,7 +61,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnMostrarAgenda);
-        btnMostrarAgenda.setBounds(0, 190, 420, 34);
+        btnMostrarAgenda.setBounds(0, 210, 420, 34);
 
         btnAgendar.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnAgendar.setText("Agendar horário");
@@ -72,7 +72,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAgendar);
-        btnAgendar.setBounds(0, 230, 420, 34);
+        btnAgendar.setBounds(0, 250, 420, 34);
 
         btnSair.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnSair.setText("Sair");
@@ -97,7 +97,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnMostrarAgendaHoje);
-        btnMostrarAgendaHoje.setBounds(0, 270, 420, 34);
+        btnMostrarAgendaHoje.setBounds(0, 290, 420, 34);
 
         btnCadastroCliente.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnCadastroCliente.setText("Cadastrar Cliente");
@@ -114,7 +114,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCadastroCliente);
-        btnCadastroCliente.setBounds(0, 150, 420, 34);
+        btnCadastroCliente.setBounds(0, 170, 420, 34);
 
         lblNomeMarca.setFont(new java.awt.Font("Pirata One", 1, 48)); // NOI18N
         lblNomeMarca.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,11 +124,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         lblNomeMarca.setBounds(0, 70, 420, 100);
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Documents/aaaaaaaaaaaaa.png")); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/LogoMenuPrincipal.png")); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(0, -10, 420, 120);
 
-        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Downloads/fundo-de-textura-de-estilo-grunge-escuro-detalhado/detailed_grunge_texture_background_2307.jpg")); // NOI18N
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
         getContentPane().add(lblFundo);
         lblFundo.setBounds(0, 0, 420, 390);
 
