@@ -138,9 +138,9 @@ public class HorariosHoje extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnRetornarMenu);
-        btnRetornarMenu.setBounds(520, 330, 230, 24);
+        btnRetornarMenu.setBounds(520, 330, 230, 25);
 
-        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/Aluno/Área de trabalho/barba_negra_cortes/imagens_telas/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
         getContentPane().add(lblFundo);
         lblFundo.setBounds(0, 0, 760, 380);
 

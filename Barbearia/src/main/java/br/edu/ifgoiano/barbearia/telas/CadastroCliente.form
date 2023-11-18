@@ -114,7 +114,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/alexandre/&#xc1;rea de trabalho/barba_negra_cortes/imagens/IconeCliente.png"/>
+          <Image iconType="2" name="/home/Aluno/&#xc1;rea de trabalho/barba_negra_cortes/imagens_telas/IconeCliente.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -126,12 +126,12 @@
     <Component class="javax.swing.JLabel" name="lblFundo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/alexandre/&#xc1;rea de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg"/>
+          <Image iconType="2" name="/home/Aluno/&#xc1;rea de trabalho/barba_negra_cortes/imagens_telas/close-up-de-negativo-de-fotografia_23-2148132284.jpg"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="-10" y="0" width="410" height="390"/>
+          <AbsoluteConstraints x="-10" y="0" width="410" height="350"/>
         </Constraint>
       </Constraints>
     </Component>

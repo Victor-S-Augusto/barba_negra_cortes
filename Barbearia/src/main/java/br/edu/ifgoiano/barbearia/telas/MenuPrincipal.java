@@ -54,7 +54,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnMostrarAgenda.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnMostrarAgenda.setText("Visualizar Agenda");
-        btnMostrarAgenda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnMostrarAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarAgendaActionPerformed(evt);
@@ -65,7 +64,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnAgendar.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnAgendar.setText("Agendar horário");
-        btnAgendar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAgendar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgendarActionPerformed(evt);
@@ -76,7 +74,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnSair.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnSair.setText("Sair");
-        btnSair.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -87,7 +84,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnMostrarAgendaHoje.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnMostrarAgendaHoje.setText("Horários de hoje");
-        btnMostrarAgendaHoje.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnMostrarAgendaHoje.setMaximumSize(new java.awt.Dimension(154, 24));
         btnMostrarAgendaHoje.setMinimumSize(new java.awt.Dimension(154, 24));
         btnMostrarAgendaHoje.setPreferredSize(new java.awt.Dimension(154, 24));
@@ -101,7 +97,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnCadastroCliente.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         btnCadastroCliente.setText("Cadastrar Cliente");
-        btnCadastroCliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCadastroCliente.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCadastroCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -124,11 +119,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         lblNomeMarca.setBounds(0, 70, 420, 100);
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/LogoMenuPrincipal.png")); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon("/home/Aluno/Área de trabalho/barba_negra_cortes/imagens_telas/LogoMenuPrincipal.png")); // NOI18N
         getContentPane().add(lblLogo);
         lblLogo.setBounds(0, -10, 420, 120);
 
-        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/Aluno/Área de trabalho/barba_negra_cortes/imagens_telas/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
         getContentPane().add(lblFundo);
         lblFundo.setBounds(0, 0, 420, 390);
 

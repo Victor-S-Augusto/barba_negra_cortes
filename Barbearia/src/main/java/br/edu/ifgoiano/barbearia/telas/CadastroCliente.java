@@ -78,9 +78,9 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNome);
-        txtNome.setBounds(119, 174, 242, 24);
+        txtNome.setBounds(119, 174, 242, 25);
         getContentPane().add(txtTelefone);
-        txtTelefone.setBounds(119, 232, 242, 24);
+        txtTelefone.setBounds(119, 232, 242, 25);
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +89,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnSalvar);
-        btnSalvar.setBounds(289, 290, 72, 24);
+        btnSalvar.setBounds(289, 290, 72, 25);
 
         btnRetornarMenu.setText("Retornar ao Menu");
         btnRetornarMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -98,16 +98,16 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnRetornarMenu);
-        btnRetornarMenu.setBounds(40, 290, 170, 24);
+        btnRetornarMenu.setBounds(40, 290, 170, 25);
 
         lblIcone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIcone.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/IconeCliente.png")); // NOI18N
+        lblIcone.setIcon(new javax.swing.ImageIcon("/home/Aluno/Área de trabalho/barba_negra_cortes/imagens_telas/IconeCliente.png")); // NOI18N
         getContentPane().add(lblIcone);
         lblIcone.setBounds(0, 40, 400, 70);
 
-        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/Aluno/Área de trabalho/barba_negra_cortes/imagens_telas/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
         getContentPane().add(lblFundo);
-        lblFundo.setBounds(-10, 0, 410, 390);
+        lblFundo.setBounds(-10, 0, 410, 350);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

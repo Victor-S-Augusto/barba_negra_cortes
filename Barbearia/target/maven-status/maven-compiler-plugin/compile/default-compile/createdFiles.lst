@@ -7,14 +7,14 @@ br/edu/ifgoiano/barbearia/telas/CadastroCliente$4.class
 br/edu/ifgoiano/barbearia/telas/HorariosHoje$2.class
 br/edu/ifgoiano/barbearia/telas/ConfirmacaoAgendamento$1.class
 br/edu/ifgoiano/barbearia/Barbearia.class
-br/edu/ifgoiano/barbearia/modelo/dto/Agendamento.class
 br/edu/ifgoiano/barbearia/modelo/dao/AgendamentoDAO.class
+br/edu/ifgoiano/barbearia/modelo/dto/Agendamento.class
 br/edu/ifgoiano/barbearia/telas/MenuPrincipal$5.class
 br/edu/ifgoiano/barbearia/telas/MenuPrincipal$6.class
 br/edu/ifgoiano/barbearia/Barbearia$1.class
 br/edu/ifgoiano/barbearia/telas/CadastroCliente.class
-br/edu/ifgoiano/barbearia/modelo/dto/Cliente.class
 br/edu/ifgoiano/barbearia/modelo/dao/ClienteDAO.class
+br/edu/ifgoiano/barbearia/modelo/dto/Cliente.class
 br/edu/ifgoiano/barbearia/telas/MenuPrincipal$3.class
 br/edu/ifgoiano/barbearia/telas/CadastroCliente$2.class
 br/edu/ifgoiano/barbearia/telas/AgendarHorario$3.class

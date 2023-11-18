@@ -130,14 +130,14 @@ public class TelaAgenda extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnVoltarMenu);
-        btnVoltarMenu.setBounds(561, 323, 190, 24);
+        btnVoltarMenu.setBounds(561, 323, 190, 25);
 
         txtTitulo.setText("Visualização dos horários");
         getContentPane().add(txtTitulo);
-        txtTitulo.setBounds(304, 0, 149, 18);
+        txtTitulo.setBounds(304, 0, 166, 19);
 
         lblFundo.setBackground(new java.awt.Color(102, 102, 102));
-        lblFundo.setIcon(new javax.swing.ImageIcon("/home/alexandre/Área de trabalho/barba_negra_cortes/imagens/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
+        lblFundo.setIcon(new javax.swing.ImageIcon("/home/Aluno/Área de trabalho/barba_negra_cortes/imagens_telas/close-up-de-negativo-de-fotografia_23-2148132284.jpg")); // NOI18N
         getContentPane().add(lblFundo);
         lblFundo.setBounds(0, 0, 770, 360);
 
