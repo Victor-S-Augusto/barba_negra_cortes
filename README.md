@@ -39,10 +39,11 @@ O sistema é baseado em uma arquitetura modular, com componentes responsáveis p
    
 ## Contribuições
 
-Contribuições são sempre bem-vindas! Para contribuir:
+Feito por:
 
-1. Faça um fork do projeto.
-2. Crie uma nova branch (`git checkout -b feature/nova-funcionalidade`).
-3. Faça suas alterações e commit (`git commit -am 'Adiciona nova funcionalidade'`).
-4. Push para a branch (`git push origin feature/nova-funcionalidade`).
-5. Abra um Pull Request.
+1. Alexandre Neves.
+2. Carlos Alves
+3. Felipe Gomes
+4. Luiz Felipe Papa
+5. Iago José
+6. Victor Augusto
